@@ -28,16 +28,14 @@ exports.login = async (req,res) => {
 } 
 
 exports.panel = async (req,res) => {
-    const token = req.headers['x-access-token'];
-    if(!token) {
-        res.status(401).json({ auth: false, message: 'No se encontro un TOKEN.' });
+    const user = await Users.findById(req.userId);
+
+    if(!user || user.length < 1) {
+        res.status(403).send('No existe el usuario o falta loguearse');
     }
+    res.status(200).send(user);
+}
 
-    jwt.verify(token,process.env.SECRET, (err,decode) => {
-        if(err) {
-            res.status(500).json({ auth: false, message: 'No se puedo autenticar el TOKEN.' });
-        }
-        res.status(200).json({decode, msg:'Bienvenido'});
-    })
-
+exports.logout = (req,res) => {
+    res.status(200).send({auth:false,token:null});
 }

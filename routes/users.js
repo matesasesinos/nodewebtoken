@@ -12,5 +12,7 @@ module.exports = () => {
 
   router.post("/login", authController.login);
   router.get("/panel", verifyToken.verifyToken, authController.panel);
+
+  router.get('/logout', authController.logout);
   return router;
 };

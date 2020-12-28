@@ -32,6 +32,6 @@ exports.userNew = async (req,res) => {
         res.status(200).json({ auth: true, token: token });
 
     } catch (error) {
-        res.status(500).json({error: `${error}`});
+        res.status(403).json({error: `${error}`});
     }
 }
