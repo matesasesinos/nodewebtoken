@@ -92,7 +92,7 @@ Ejemplo:
         {
             "_id": "5fe9e6c5fb044f1998c28462",
             "name": "Juan Iriart",
-            "email": "jeiriart@gmail.com",
+            "email": "mi@email.com",
             "password": "$2b$12$q9ALa1LD.1d2u8s0jwx/rOY9Lk5fTE0bIIY3QrzueeBc6pG5U8FU6",
             "created": "2020-12-28T14:08:05.322Z",
             "__v": 0
